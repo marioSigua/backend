@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 const middlewares = require("./middlewares/errorhandler");
-
+  
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
