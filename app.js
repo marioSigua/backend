@@ -8,14 +8,30 @@ const cors = require("cors");
 
 app.use(express.json());
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({ message: "kalil" });
 });
 
+const listapi = require("./lib/api/list.api");
+
+app.use("/api/p1", listapi);
+
+const knexfile = require("./knexfile");
+
+const Knex = require("knex");
+
+const { Model } = require("objection");
+
+const knex = Knex(knexfile.development);
+
+Model.knex(knex);
+
 const middlewares = require("./middlewares/errorhandler");
-  
+
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
