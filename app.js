@@ -16,6 +16,10 @@ app.get("/", (req, res) => {
   res.json({ message: "kalil" });
 });
 
+const accountapi = require("./lib/api/accounts.api");
+
+app.use("/api/p1", accountapi);
+
 const listapi = require("./lib/api/list.api");
 
 app.use("/api/p1", listapi);
