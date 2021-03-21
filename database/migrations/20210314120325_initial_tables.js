@@ -14,7 +14,7 @@ exports.up = async function (knex) {
       })
 
       await knex.schema.createTable(tableNames.students_tbl, function (table) {
-            table.string('student_id').notNullable()
+            table.string('student_id', 255).notNullable().primary()
             table.string('firstname')
             table.string('lastname')
             table.string('student_course')
@@ -23,7 +23,7 @@ exports.up = async function (knex) {
       })
 
       await knex.schema.createTable(tableNames.subjects_tbl, function (table) {
-            table.string('subject_code').notNullable()
+            table.string('subject_code', 255).notNullable().primary()
             table.string('subject_name')
             table.string('subject_desc')
             table.string('subject_term')
@@ -36,26 +36,23 @@ exports.up = async function (knex) {
             function (table) {
                   table.increments('enrolled_id').notNullable()
 
-                  table.string('student_id')
-                        .unsigned()
-                        .references('student_id')
-                        .inTable(tableNames.students_tbl)
-                        .onDelete('CASCADE')
-                        .index()
-
-                  table.string('subject_code')
-                        .unsigned()
-                        .references('subject_code')
-                        .inTable(tableNames.subjects_tbl)
-                        .onDelete('CASCADE')
-                        .index()
-
-                  table.dobule('prelim_grade', 2)
-                  table.dobule('midterm_grade', 2)
-                  table.dobule('finals_grade', 2)
+                  table.float('prelim_grade')
+                  table.float('midterm_grade')
+                  table.float('finals_grade')
                   table.string('current_sem')
                   table.string('school_year')
-                  table.timestamps(true, true)
+
+                  table.string('student_id', 255)
+                        .references('student_id')
+                        .inTable(tableNames.students_tbl)
+                        .index()
+
+                  table.string('subject_code', 255)
+                        .references('subject_code')
+                        .inTable(tableNames.subjects_tbl)
+                        .index()
+
+                  // table.timestamps(true, true)
             }
       )
 }
