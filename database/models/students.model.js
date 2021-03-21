@@ -11,16 +11,24 @@ class StudentModel extends Model {
       }
 
       static get relationMappings() {
-            const EnrolledSubjects = require('./enrolled_students.model')
+            const SubjectsModel = require('./subjects.model')
 
             return {
                   EnrolledSubjects: {
-                        relation: Model.BelongsToOneRelation,
-                        modelClass: EnrolledSubjects,
+                        relation: Model.ManyToManyRelation,
+                        modelClass: SubjectsModel,
 
                         join: {
                               from: this.tableName + '.student_id',
-                              to: tableNames.enrolled_subjects + '.student_id',
+                              through: {
+                                    from:
+                                          tableNames.enrolled_subjects +
+                                          '.student_id',
+                                    to:
+                                          tableNames.enrolled_subjects +
+                                          '.subject_code',
+                              },
+                              to: tableNames.subjects_tbl + '.subject_code',
                         },
                   },
             }
