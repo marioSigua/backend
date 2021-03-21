@@ -1,10 +1,12 @@
+const tablenames = require('../../lib/constants/tablenames')
+
 exports.seed = function (knex) {
       // Deletes ALL existing entries
-      return knex('table_name')
+      return knex(tablenames.enrolled_subjects)
             .del()
             .then(function () {
                   // Inserts seed entries
-                  return knex('table_name').insert([
+                  return knex(tablenames.enrolled_subjects).insert([
                         {
                               student_id: 1,
                               subject_code: 'CMPE563',
