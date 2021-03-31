@@ -15,6 +15,7 @@ exports.seed = function (knex) {
                               subject_year: '5th YEAR',
                               subject_course: 'BSCOE',
                               account_id: 1,
+                              isOccupied: 1,
                         },
 
                         {
@@ -25,6 +26,7 @@ exports.seed = function (knex) {
                               subject_year: '5th YEAR',
                               subject_course: 'BSCOE',
                               account_id: 1,
+                              isOccupied: 1,
                         },
 
                         {
@@ -35,6 +37,7 @@ exports.seed = function (knex) {
                               subject_year: '5th YEAR',
                               subject_course: 'BSCOE',
                               account_id: 1,
+                              isOccupied: 1,
                         },
 
                         {
@@ -45,6 +48,7 @@ exports.seed = function (knex) {
                               subject_year: '5th YEAR',
                               subject_course: 'BSCOE',
                               account_id: 1,
+                              isOccupied: 1,
                         },
 
                         {

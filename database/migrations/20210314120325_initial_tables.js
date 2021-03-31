@@ -39,6 +39,8 @@ exports.up = async function (knex) {
                   .onDelete('CASCADE')
                   .index()
 
+            table.boolean('isOccupied').defaultTo(false)
+
             table.string('current_year').defaultTo(new Date().getFullYear())
             table.timestamps(true, true)
       })
