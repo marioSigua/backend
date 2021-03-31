@@ -60,13 +60,11 @@ exports.up = async function (knex) {
       await knex.schema.createTable(tableNames.questions_tbl, function (table) {
             table.increments('question_id').notNullable()
 
-            table.string('question_desc')
+            table.string('form_title')
 
-            table.jsonb('question_choices')
+            table.jsonb('question_form')
 
-            table.string('question_answer').nullable()
-
-            table.string('student_answer').nullable()
+            table.jsonb('student_answer').nullable()
 
             table.string('student_id', 255)
                   .references('student_id')

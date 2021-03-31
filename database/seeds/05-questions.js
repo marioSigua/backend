@@ -9,20 +9,18 @@ exports.seed = function (knex) {
                   return knex(tablenames.questions_tbl).insert([
                         {
                               question_desc: 'what is the world',
-                              question_choices: JSON.stringify([
-                                    {
-                                          a: 'tangina',
-                                          b: 'bubub',
-                                          c: '34 thousand',
-                                    },
-                              ]),
+                              question_form: JSON.stringify({
+                                    type: 'identification',
+                                    question: 'what is kamote',
+                                    student_answer: 'hindi ko alam sir',
+                              }),
                               student_id: 1,
                               subject_code: 'CMPE563',
                         },
 
                         {
                               question_desc: 'sino si papa mo',
-                              question_choices: JSON.stringify({
+                              question_form: JSON.stringify({
                                     a: 'tangina',
                                     b: 'bubub',
                               }),
@@ -33,7 +31,7 @@ exports.seed = function (knex) {
 
                         {
                               question_desc: 'sino pinakamalaks sa earth  ',
-                              question_choices: JSON.stringify({
+                              question_form: JSON.stringify({
                                     a: 'tangina',
                                     b: 'bubub',
                               }),

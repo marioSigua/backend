@@ -12,7 +12,9 @@ class QuestionModel extends Model {
 
       static columnNameMappers = {
             parse(obj) {
-                  obj['question_choices'] = JSON.parse(obj.question_choices)
+                  obj['question_form'] = JSON.parse(obj.question_form)
+                  obj['student_answer'] = JSON.parse(obj.student_answer)
+
                   return obj
             },
 
