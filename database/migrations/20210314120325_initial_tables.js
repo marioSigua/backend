@@ -7,9 +7,12 @@ const Knex = require('knex')
 exports.up = async function (knex) {
       await knex.schema.createTable(tableNames.accounts_tbl, function (table) {
             table.increments('account_id').notNullable()
+            table.string('prof_id', 255)
             table.string('email')
             table.string('password')
             table.string('account_type')
+            table.string('firstname').nullable()
+            table.string('lastname').nullable()
             table.timestamps(true, true)
       })
 
@@ -18,7 +21,6 @@ exports.up = async function (knex) {
             table.string('firstname')
             table.string('lastname')
             table.string('student_course')
-            table.double('student_grade')
             table.timestamps(true, true)
       })
 
@@ -29,6 +31,15 @@ exports.up = async function (knex) {
             table.string('subject_sem')
             table.string('subject_year')
             table.string('subject_course')
+
+            table.integer('account_id')
+                  .unsigned()
+                  .references('account_id')
+                  .inTable(tableNames.accounts_tbl)
+                  .onDelete('CASCADE')
+                  .index()
+
+            table.string('current_year').defaultTo(new Date().getFullYear())
             table.timestamps(true, true)
       })
 
@@ -70,17 +81,16 @@ exports.up = async function (knex) {
                   .references('student_id')
                   .inTable(tableNames.students_tbl)
                   .index()
-                  .notNullable()
 
             table.string('subject_code', 255)
                   .references('subject_code')
                   .inTable(tableNames.subjects_tbl)
                   .index()
-                  .notNullable()
 
             table.timestamps(true, true)
       })
 }
+
 /**
  *
  * @param {Knex} knex

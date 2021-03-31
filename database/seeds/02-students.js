@@ -12,7 +12,6 @@ exports.seed = function (knex) {
                               firstname: 'bobo',
                               lastname: 'oo',
                               student_course: 'BSIE',
-                              student_grade: '',
                         },
 
                         {
@@ -20,7 +19,6 @@ exports.seed = function (knex) {
                               firstname: 'tanga',
                               lastname: 'ikaw',
                               student_course: 'BSECE',
-                              student_grade: '',
                         },
 
                         {
@@ -28,7 +26,6 @@ exports.seed = function (knex) {
                               firstname: 'inutil',
                               lastname: 'po',
                               student_course: 'BSECE',
-                              student_grade: '',
                         },
 
                         {
@@ -36,7 +33,6 @@ exports.seed = function (knex) {
                               firstname: 'mario',
                               lastname: 'sigua',
                               student_course: 'BSECE',
-                              student_grade: '',
                         },
 
                         {
@@ -44,7 +40,6 @@ exports.seed = function (knex) {
                               firstname: 'david',
                               lastname: 'argarini',
                               student_course: 'BSCpE',
-                              student_grade: '',
                         },
 
                         {
@@ -52,7 +47,6 @@ exports.seed = function (knex) {
                               firstname: 'vincent',
                               lastname: 'gorospe',
                               student_course: 'BSCpE',
-                              student_grade: '',
                         },
 
                         {
@@ -60,7 +54,6 @@ exports.seed = function (knex) {
                               firstname: 'carlo',
                               lastname: 'isidro',
                               student_course: 'BSCpE',
-                              student_grade: '',
                         },
                   ])
             })
