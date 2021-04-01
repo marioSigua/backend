@@ -12,43 +12,43 @@ exports.seed = function (knex) {
                         {
                               email: 'mario.sigua.12@gmail.com',
                               password: pass,
-                              account_type: 'Student',
+                              account_type: 'Professor',
                         },
 
                         {
                               email: 'mariosigua@ymail.com',
                               password: pass,
-                              account_type: 'Student',
+                              account_type: 'Professor',
                         },
 
                         {
                               email: 'mario_sigua@yahoo.com',
                               password: pass,
-                              account_type: 'Student',
+                              account_type: 'Professor',
                         },
 
                         {
                               email: 'kamotebayan@yahoo.com',
                               password: pass,
-                              account_type: 'Student',
+                              account_type: 'Professor',
                         },
 
                         {
                               email: 'itsshowtime@yahoo.com',
                               password: pass,
-                              account_type: 'Student',
+                              account_type: 'Professor',
                         },
 
                         {
                               email: 'fuckdu30@yahoo.com',
                               password: pass,
-                              account_type: 'Student',
+                              account_type: 'Professor',
                         },
 
                         {
                               email: 'harrypotter@yahoo.com',
                               password: pass,
-                              account_type: 'Student',
+                              account_type: 'Professor',
                         },
                   ])
             })
