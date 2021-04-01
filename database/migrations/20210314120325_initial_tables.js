@@ -18,7 +18,8 @@ exports.up = async function (knex) {
     table.string("firstname");
     table.string("lastname");
     table.string("student_course");
-    table.double("student_grade");
+    table.string("student_year");
+    table.string("year_block");
     table.timestamps(true, true);
   });
 
