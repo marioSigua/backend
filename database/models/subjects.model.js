@@ -9,6 +9,50 @@ class SubjectModel extends Model {
       static get idColumn() {
             return 'subject_code'
       }
+
+      static get relationMappings() {
+            const StudentsModel = require('./students.model')
+            const EnrolledStudents = require('./enrolled_students.model')
+
+            return {
+                  students: {
+                        relation: Model.ManyToManyRelation,
+                        modelClass: () => StudentsModel,
+
+                        join: {
+                              from: this.tableName + '.subject_code',
+                              through: {
+                                    from:
+                                          tableNames.enrolled_subjects +
+                                          '.subject_code',
+
+                                    to:
+                                          tableNames.enrolled_subjects +
+                                          '.student_id',
+
+                                    extra: [
+                                          'prelim_grade',
+                                          'midterm_grade',
+                                          'finals_grade',
+                                    ],
+                              },
+                              to: tableNames.students_tbl + '.student_id',
+                        },
+                  },
+
+                  studentGrades: {
+                        relation: Model.HasManyRelation,
+                        modelClass: () => EnrolledStudents,
+                        join: {
+                              from: this.tableName + '.subject_code',
+
+                              to:
+                                    tableNames.enrolled_subjects +
+                                    '.subject_code',
+                        },
+                  },
+            }
+      }
 }
 
 module.exports = SubjectModel
