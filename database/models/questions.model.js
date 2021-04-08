@@ -12,8 +12,8 @@ class QuestionModel extends Model {
 
       static columnNameMappers = {
             parse(obj) {
-                  obj['question_form'] = JSON.parse(obj.question_form)
-                  obj['student_answer'] = JSON.parse(obj.student_answer)
+                  // obj['question_form'] = JSON.parse(obj.question_form)
+                  // obj['student_response'] = JSON.parse(obj.student_response)
 
                   return obj
             },

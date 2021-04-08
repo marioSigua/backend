@@ -13,26 +13,25 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(cors())
 
-const shouldCompress = (req, res) => {
-      if (req.headers['x-no-compression']) {
-            // don't compress responses if this request header is present
-            return false
-      }
+// const shouldCompress = (req, res) => {
+//       if (req.headers['x-no-compression']) {
+//             // don't compress responses if this request header is present
+//             return false
+//       }
 
-      // fallback to standard compression
-      return compression.filter(req, res)
-}
+//       // fallback to standard compression
+//       return compression.filter(req, res)
+// }
+// {
+//       // filter decides if the response should be compressed or not,
+//       // based on the `shouldCompress` function above
+//       filter: shouldCompress,
+//       // threshold is the byte threshold for the response body size
+//       // before compression is considered, the default is 1kb
+//       threshold: 0,
+// }
 
-app.use(
-      compression({
-            // filter decides if the response should be compressed or not,
-            // based on the `shouldCompress` function above
-            filter: shouldCompress,
-            // threshold is the byte threshold for the response body size
-            // before compression is considered, the default is 1kb
-            threshold: 0,
-      })
-)
+app.use(compression())
 
 app.get('/', (req, res) => {
       res.json({ message: 'kalil' })
