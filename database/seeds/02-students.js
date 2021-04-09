@@ -13,6 +13,7 @@ exports.seed = function (knex) {
                               firstname: 'bobo',
                               lastname: 'oo',
                               student_course: 'BSIE',
+                              isEnrolled: 1,
                         },
 
                         {
@@ -21,6 +22,7 @@ exports.seed = function (knex) {
                               student_email: 'vincentgorospe221@gmail.com',
                               lastname: 'ikaw',
                               student_course: 'BSECE',
+                              isEnrolled: 1,
                         },
 
                         {
@@ -29,6 +31,7 @@ exports.seed = function (knex) {
                               student_email: 'caliljaudiannnn@gmail.com',
                               lastname: 'po',
                               student_course: 'BSECE',
+                              isEnrolled: 1,
                         },
 
                         {
@@ -36,6 +39,7 @@ exports.seed = function (knex) {
                               firstname: 'mario',
                               student_email: 'caliljaudiannn@gmail.com',
                               lastname: 'sigua',
+                              isEnrolled: 1,
                               student_course: 'BSECE',
                         },
 
@@ -45,6 +49,7 @@ exports.seed = function (knex) {
                               student_email: 'mario.sigua.12@gmail.com',
                               lastname: 'argarini',
                               student_course: 'BSCpE',
+                              isEnrolled: 1,
                         },
 
                         {
@@ -53,6 +58,7 @@ exports.seed = function (knex) {
                               student_email: 'davidargarin2104@gmail.com',
                               lastname: 'gorospe',
                               student_course: 'BSCpE',
+                              isEnrolled: 1,
                         },
 
                         {
@@ -60,6 +66,7 @@ exports.seed = function (knex) {
                               firstname: 'carlo',
                               lastname: 'isidro',
                               student_course: 'BSCpE',
+                              isEnrolled: 1,
                         },
                   ])
             })

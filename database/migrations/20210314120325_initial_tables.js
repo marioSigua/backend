@@ -21,6 +21,7 @@ exports.up = async function (knex) {
             table.string('firstname')
             table.string('lastname')
             table.string('student_course')
+            table.boolean('isEnrolled').defaultTo(false)
             table.timestamps(true, true)
       })
 
