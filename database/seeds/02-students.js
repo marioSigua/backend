@@ -1,4 +1,4 @@
-const tableNames = require('../../lib/constants/tablenames')
+const tableNames = require("../../lib/constants/tablenames");
 
 exports.seed = function (knex) {
       // Deletes ALL existing entries
