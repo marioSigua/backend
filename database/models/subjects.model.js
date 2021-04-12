@@ -31,6 +31,8 @@ class SubjectModel extends Model {
                             'prelim_grade',
                             'midterm_grade',
                             'finals_grade',
+                            'isDropped',
+                            'created_at',
                         ],
                     },
                     to: tableNames.students_tbl + '.student_id',

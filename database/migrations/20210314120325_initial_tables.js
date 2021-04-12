@@ -21,8 +21,6 @@ exports.up = async function (knex) {
         table.string('firstname')
         table.string('lastname')
         table.string('student_course')
-        table.boolean('isEnrolled').defaultTo(false)
-        table.timestamps(true, true)
     })
 
     await knex.schema.createTable(tableNames.subjects_tbl, function (table) {
@@ -58,6 +56,8 @@ exports.up = async function (knex) {
             table.float('finals_grade')
             table.string('current_sem')
             table.string('school_year')
+
+            table.boolean('isDropped').defaultTo(false)
 
             table
                 .string('student_id', 255)
