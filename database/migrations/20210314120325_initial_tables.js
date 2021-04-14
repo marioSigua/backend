@@ -75,10 +75,19 @@ exports.up = async function (knex) {
      await knex.schema.createTable(tableNames.questions_tbl, function (table) {
           table.increments('question_id').notNullable()
 
+          table.string('batch_number', 255)
+          table.string('form_number', 255)
+
+          table.string('type')
+          table.string('format')
+          table.string('topic')
           table.string('term')
+          table.string('question_text').nullable()
+          table.string('student_answer').nullable()
+          table.specificType('question_image', 'longblob').nullable()
 
-          table.jsonb('question_form')
-
+          table.jsonb('choices').nullable()
+          table.string('form_answer')
           table.string('subject_code', 255)
                .references('subject_code')
                .inTable(tableNames.subjects_tbl)
@@ -90,23 +99,25 @@ exports.up = async function (knex) {
      await knex.schema.createTable(tableNames.response_tbl, function (table) {
           table.increments('response_id').notNullable()
 
-          table.jsonb('student_reponse')
+          table.specificType('student_answer', 'longtext').nullable()
 
-          table.integer('student_score')
+          table.integer('student_score').nullable()
 
           table.string('firstname')
           table.string('lastname')
+
           table.string('student_id', 255)
                .references('student_id')
                .inTable(tableNames.students_tbl)
                .index()
 
-          table.integer('question_id')
-               .unsigned()
-               .references('question_id')
-               .inTable(tableNames.questions_tbl)
-               .onDelete('CASCADE')
+          table.string('subject_code', 255)
+               .references('subject_code')
+               .inTable(tableNames.subjects_tbl)
                .index()
+
+          table.string('batch_number', 255)
+          table.string('form_number', 255)
 
           table.timestamps(true, true)
      })
