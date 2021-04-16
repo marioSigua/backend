@@ -8,7 +8,9 @@ const cors = require('cors')
 const compression = require('compression')
 
 app.use(express.json())
-
+// {
+//       limit: '50mb',
+//  }
 app.use(express.urlencoded({ extended: true }))
 
 app.use(cors())
@@ -34,7 +36,7 @@ app.use(cors())
 app.use(compression())
 
 app.get('/', (req, res) => {
-      res.json({ message: 'kalil' })
+     res.json({ message: 'kalil' })
 })
 
 const accountapi = require('./lib/api/accounts.api')
@@ -58,5 +60,5 @@ app.use(middlewares.errorHandler)
 const PORT = process.env.PORT || 5115
 
 app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`)
+     console.log(`Server is running on port ${PORT}`)
 })
