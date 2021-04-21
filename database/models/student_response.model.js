@@ -9,6 +9,11 @@ class ResponseModel extends Model {
      static get idColumn() {
           return 'response_id'
      }
+
+     static get relationMappings() {
+          const StudentsModel = require('./students.model')
+          return {}
+     }
 }
 
 module.exports = ResponseModel
