@@ -103,9 +103,6 @@ exports.up = async function (knex) {
 
           table.integer('student_score').nullable()
 
-          table.string('firstname')
-          table.string('lastname')
-
           table.string('student_id', 255)
                .references('student_id')
                .inTable(tableNames.students_tbl)
