@@ -77,14 +77,13 @@ exports.up = async function (knex) {
 
           table.string('batch_number', 255)
           table.string('form_number', 255)
-
+          table.string('question_score')
           table.string('type')
           table.string('format')
           table.string('topic')
           table.string('term')
           table.string('question_text').nullable()
           table.jsonb('question_image').nullable()
-          // table.specificType('question_image', 'longblob').nullable()
           table.string('student_answer').nullable()
 
           table.jsonb('choices').nullable()
