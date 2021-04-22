@@ -25,14 +25,14 @@ class StudentModel extends Model {
                     },
                },
 
-               StudentsResponse: {
-                    relation: Model.HasOneRelation,
-                    modelClass: StudentsModel,
+               studentResponse: {
+                    relation: Model.ManyToManyRelation,
+                    modelClass: QuestionsModel,
 
                     join: {
                          from: this.tableName + '.student_id',
 
-                         to: tableNames.students_tbl + '.student_id',
+                         to: tableNames.questions_tbl + '.batch_number',
                     },
                },
           }
