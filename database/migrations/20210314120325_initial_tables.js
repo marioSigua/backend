@@ -77,9 +77,9 @@ exports.up = async function (knex) {
 
           table.string('batch_number', 255)
           table.string('form_number', 255)
+          table.specificType('description', 'longtext').nullable()
           table.string('question_score')
           table.string('type')
-          table.string('format')
           table.string('topic')
           table.string('term')
           table.string('question_text').nullable()
