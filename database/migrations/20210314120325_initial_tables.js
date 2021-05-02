@@ -82,8 +82,8 @@ exports.up = async function (knex) {
           table.string('type')
           table.string('topic')
           table.string('term')
-          table.string('question_text').nullable()
-          table.jsonb('question_image').nullable()
+          table.string('question_type').nullable()
+          table.jsonb('question').nullable()
           table.string('student_answer').nullable()
 
           table.jsonb('choices').nullable()
