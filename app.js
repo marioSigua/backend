@@ -6,7 +6,7 @@ const app = express()
 
 const cors = require('cors')
 const compression = require('compression')
-
+const helmet = require('helmet')
 app.use(express.json())
 // {
 //       limit: '50mb',
@@ -18,7 +18,7 @@ app.use(
           'Access-Control-Allow-Origin': '*',
      })
 )
-
+app.use(helmet())
 // const shouldCompress = (req, res) => {
 //       if (req.headers['x-no-compression']) {
 //             // don't compress responses if this request header is present
@@ -52,7 +52,7 @@ app.use('/api/p1', listapi)
 const knexfile = require('./knexfile')
 const Knex = require('knex')
 const { Model } = require('objection')
-const knex = Knex(knexfile.production)
+const knex = Knex(knexfile.development)
 
 Model.knex(knex)
 
