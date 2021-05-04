@@ -13,7 +13,11 @@ app.use(express.json())
 //  }
 app.use(express.urlencoded({ extended: true }))
 
-app.use(cors())
+app.use(
+     cors({
+          'Access-Control-Allow-Origin': '*',
+     })
+)
 
 // const shouldCompress = (req, res) => {
 //       if (req.headers['x-no-compression']) {
@@ -48,7 +52,7 @@ app.use('/api/p1', listapi)
 const knexfile = require('./knexfile')
 const Knex = require('knex')
 const { Model } = require('objection')
-const knex = Knex(knexfile.development)
+const knex = Knex(knexfile.production)
 
 Model.knex(knex)
 

@@ -6,47 +6,47 @@
 require('dotenv').config()
 
 module.exports = {
-     development: {
+     // development: {
+     //      client: 'mysql',
+     //      connection: {
+     //           //host: process.env.DB_HOST,
+     //           host: 'localhost',
+     //           database: 'thesisdb',
+     //           user: 'root',
+     //           pass: '',
+     //           // user: 'cliljdn',
+     //           // password: 'jaudian29',
+     //           timezone: 'UTC',
+     //           dateStrings: true,
+     //      },
+     //      pool: {
+     //           min: 2,
+     //           max: 10,
+     //      },
+     //      migrations: {
+     //           directory: './database/migrations',
+     //      },
+     //      seeds: {
+     //           directory: './database/seeds',
+     //      },
+     // },
+
+     production: {
           client: 'mysql',
           connection: {
-               //host: process.env.DB_HOST,
-               host: 'localhost',
+               host: process.env.DB_HOST,
                database: 'thesisdb',
-               user: 'root',
-               pass: '',
-               // user: 'cliljdn',
-               // password: 'jaudian29',
-               timezone: 'UTC',
-               dateStrings: true,
+               user: 'cliljdn',
+               password: 'jaudian29',
           },
+
           pool: {
                min: 2,
                max: 10,
           },
+
           migrations: {
-               directory: './database/migrations',
-          },
-          seeds: {
-               directory: './database/seeds',
+               tableName: 'knex_migrations',
           },
      },
-
-     //  production: {
-     //       client: 'mysql',
-     //       connection: {
-     //            host: process.env.DB_HOST,
-     //            database: 'thesisdb',
-     //            user: 'cliljdn',
-     //            password: 'jaudian29',
-     //       },
-
-     //       pool: {
-     //            min: 2,
-     //            max: 10,
-     //       },
-
-     //       migrations: {
-     //            tableName: 'knex_migrations',
-     //       },
-     //  },
 }
