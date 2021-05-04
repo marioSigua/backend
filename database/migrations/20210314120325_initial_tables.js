@@ -77,14 +77,13 @@ exports.up = async function (knex) {
 
           table.string('batch_number', 255)
           table.string('form_number', 255)
-
+          table.specificType('description', 'longtext').nullable()
+          table.string('question_score')
           table.string('type')
-          table.string('format')
           table.string('topic')
           table.string('term')
-          table.string('question_text').nullable()
-          table.jsonb('question_image').nullable()
-          // table.specificType('question_image', 'longblob').nullable()
+          table.string('question_type').nullable()
+          table.jsonb('question').nullable()
           table.string('student_answer').nullable()
 
           table.jsonb('choices').nullable()
@@ -103,9 +102,6 @@ exports.up = async function (knex) {
           table.specificType('student_answer', 'longtext').nullable()
 
           table.integer('student_score').nullable()
-
-          table.string('firstname')
-          table.string('lastname')
 
           table.string('student_id', 255)
                .references('student_id')
