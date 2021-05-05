@@ -9,7 +9,6 @@ exports.up = async function (knex) {
           table.increments('account_id').notNullable()
           table.string('email')
           table.string('password')
-          table.string('account_type')
           table.string('firstname').nullable()
           table.string('lastname').nullable()
           table.timestamps(true, true)
