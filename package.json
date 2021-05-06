@@ -15,11 +15,13 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.2",
     "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "nodemailer": "^6.5.0",
+    "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^2.0.7",
     "objection": "^2.2.14"
   }

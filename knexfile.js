@@ -31,22 +31,22 @@ module.exports = {
           },
      },
 
-     //  production: {
-     //       client: 'mysql',
-     //       connection: {
-     //            host: process.env.DB_HOST,
-     //            database: 'thesisdb',
-     //            user: 'cliljdn',
-     //            password: 'jaudian29',
-     //       },
+     // production: {
+     //      client: 'mysql',
+     //      connection: {
+     //           host: process.env.DB_HOST,
+     //           database: 'thesisdb',
+     //           user: 'mario123',
+     //           password: 'Password1',
+     //      },
 
-     //       pool: {
-     //            min: 2,
-     //            max: 10,
-     //       },
+     //      pool: {
+     //           min: 2,
+     //           max: 10,
+     //      },
 
-     //       migrations: {
-     //            tableName: 'knex_migrations',
-     //       },
-     //  },
+     //      migrations: {
+     //           tableName: 'knex_migrations',
+     //      },
+     // },
 }
