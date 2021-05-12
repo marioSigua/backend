@@ -8,6 +8,7 @@ exports.up = async function (knex) {
      await knex.schema.createTable(tableNames.accounts_tbl, function (table) {
           table.increments('account_id').notNullable()
           table.string('email')
+          table.boolean('isActive').defaultTo(0)
           table.string('password')
           table.string('firstname').nullable()
           table.string('lastname').nullable()
@@ -24,6 +25,7 @@ exports.up = async function (knex) {
 
      await knex.schema.createTable(tableNames.subjects_tbl, function (table) {
           table.string('subject_code', 255).notNullable().primary()
+
           table.string('subject_name')
           table.string('subject_desc')
           table.string('subject_sem')
@@ -48,7 +50,6 @@ exports.up = async function (knex) {
           tableNames.enrolled_subjects,
           function (table) {
                table.increments('enrolled_id').notNullable()
-
                table.float('prelim_grade')
                table.float('midterm_grade')
                table.float('finals_grade')
@@ -92,7 +93,8 @@ exports.up = async function (knex) {
                .inTable(tableNames.subjects_tbl)
                .index()
 
-          table.timestamps(true, true)
+          table.time('time_end')
+          table.date('date_end')
      })
 
      await knex.schema.createTable(tableNames.response_tbl, function (table) {
