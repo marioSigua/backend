@@ -14,6 +14,7 @@ exports.seed = function (knex) {
                          password: pass,
                          firstname: 'Mario',
                          lastname: 'Sigua',
+                         isActive: 1,
                     },
 
                     {

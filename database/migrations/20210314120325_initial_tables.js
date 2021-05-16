@@ -80,6 +80,7 @@ exports.up = async function (knex) {
           table.specificType('description', 'longtext').nullable()
           table.string('question_score')
           table.string('type')
+          table.string('exam_purpose')
           table.string('topic')
           table.string('term')
           table.string('question_type').nullable()
@@ -127,7 +128,11 @@ exports.up = async function (knex) {
 
           table.string('student_id', 255)
 
-          table.string('status')
+          table.string('subject_code', 255)
+               .references('subject_code')
+               .inTable(tableNames.subjects_tbl)
+               .index()
+
           table.timestamps(true, true)
      })
 }
@@ -137,6 +142,7 @@ exports.up = async function (knex) {
  * @param {Knex} knex
  */
 exports.down = async function (knex) {
+     await knex.schema.dropTableIfExists(tableNames.email_status)
      await knex.schema.dropTableIfExists(tableNames.response_tbl)
      await knex.schema.dropTableIfExists(tableNames.questions_tbl)
      await knex.schema.dropTableIfExists(tableNames.enrolled_subjects)
