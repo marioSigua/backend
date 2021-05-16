@@ -119,6 +119,17 @@ exports.up = async function (knex) {
 
           table.timestamps(true, true)
      })
+
+     await knex.schema.createTable(tableNames.email_status, function (table) {
+          table.increments('response_id').notNullable()
+
+          table.string('batch_number', 255)
+
+          table.string('student_id', 255)
+
+          table.string('status')
+          table.timestamps(true, true)
+     })
 }
 
 /**
