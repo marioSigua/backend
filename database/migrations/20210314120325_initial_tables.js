@@ -8,6 +8,7 @@ exports.up = async function (knex) {
      await knex.schema.createTable(tableNames.accounts_tbl, function (table) {
           table.increments('account_id').notNullable()
           table.string('email')
+          table.string('type')
           table.boolean('isActive').defaultTo(0)
           table.string('password')
           table.string('firstname').nullable()

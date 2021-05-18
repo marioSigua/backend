@@ -77,6 +77,16 @@ class SubjectModel extends Model {
                          to: tableNames.students_tbl + '.student_id',
                     },
                },
+
+               SubjectsGrade: {
+                    relation: Model.HasManyRelation,
+                    modelClass: () => EnrolledStudents,
+                    join: {
+                         from: this.tableName + '.subject_code',
+
+                         to: tableNames.enrolled_subjects + '.subject_code',
+                    },
+               },
           }
      }
 }

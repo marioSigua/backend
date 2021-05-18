@@ -14,7 +14,7 @@ exports.seed = function (knex) {
                          subject_sem: '2nd SEMESTER',
                          subject_year: '5th YEAR',
                          subject_course: 'BSCOE',
-                         account_id: 1,
+                         account_id: 2,
                          isOccupied: 1,
                     },
 
@@ -34,7 +34,7 @@ exports.seed = function (knex) {
                          subject_sem: '2nd SEMESTER',
                          subject_year: '5th YEAR',
                          subject_course: 'BSCOE',
-                         account_id: 1,
+                         account_id: 2,
                          isOccupied: 1,
                     },
 
@@ -54,7 +54,7 @@ exports.seed = function (knex) {
                          subject_sem: '2nd SEMESTER',
                          subject_year: '5th YEAR',
                          subject_course: 'BSCOE',
-                         account_id: 1,
+                         account_id: 2,
                          isOccupied: 1,
                     },
 
@@ -74,7 +74,7 @@ exports.seed = function (knex) {
                          subject_sem: '2nd SEMESTER',
                          subject_year: '5th YEAR',
                          subject_course: 'BSCOE',
-                         account_id: 1,
+                         account_id: 2,
                          isOccupied: 1,
                     },
 
@@ -94,7 +94,7 @@ exports.seed = function (knex) {
                          subject_sem: '2nd SEMESTER',
                          subject_year: '5th YEAR',
                          subject_course: 'BSCOE',
-                         account_id: 1,
+                         account_id: 2,
                          isOccupied: 1,
                     },
 
@@ -114,7 +114,7 @@ exports.seed = function (knex) {
                          subject_sem: '2nd SEMESTER',
                          subject_year: '5th YEAR',
                          subject_course: 'BSCOE',
-                         account_id: 1,
+                         account_id: 2,
                          isOccupied: 1,
                     },
 
