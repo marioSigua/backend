@@ -4,33 +4,21 @@ const express = require("express");
 
 const app = express();
 
-<<<<<<< HEAD
-const cors = require("cors");
-const compression = require("compression");
-
-app.use(express.json());
-=======
 const cors = require('cors')
 const compression = require('compression')
 const helmet = require('helmet')
 app.use(express.json())
->>>>>>> d775592600c1d9632d40c5977fd617eba4b9c7bf
 // {
 //       limit: '50mb',
 //  }
 app.use(express.urlencoded({ extended: true }));
 
-<<<<<<< HEAD
-app.use(cors());
-
-=======
 app.use(
      cors({
           'Access-Control-Allow-Origin': '*',
      })
 )
 app.use(helmet())
->>>>>>> d775592600c1d9632d40c5977fd617eba4b9c7bf
 // const shouldCompress = (req, res) => {
 //       if (req.headers['x-no-compression']) {
 //             // don't compress responses if this request header is present
